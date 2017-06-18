@@ -19,7 +19,7 @@ int main() {
 
             char* img_src = new char[100];
             sprintf(img_src,"%s/%d.pgm",src,j);
-
+            
             printf("%s\n",img_src);
 //            保存图片内容
             IplImage* d = cvLoadImage(img_src, CV_LOAD_IMAGE_GRAYSCALE);
@@ -31,7 +31,6 @@ int main() {
             di= cvCreateImage(cvSize, d->depth, d->nChannels);
             cvResize(d, di, CV_INTER_AREA);
             cvEqualizeHist(di,di);
-
 
 //            cvNamedWindow("meanFace");
 //            cvShowImage("meanFace", d);
