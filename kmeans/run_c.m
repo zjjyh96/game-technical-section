@@ -1,5 +1,4 @@
 
-
 load('digit_data.mat');
 
 K=[10,20,50];

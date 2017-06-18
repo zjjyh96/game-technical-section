@@ -1,4 +1,4 @@
-nrep=500;
+nrep=50;
 
 SDmin=9999;
 SDmax=0;
@@ -24,9 +24,6 @@ if sd<SDmin
     ctrs_min=ctrs;
     i_ctrs_min=iter_ctrs;
 end
-
-    
-
 
 end
 

@@ -9,10 +9,8 @@ function [idx, ctrs, iter_ctrs] = kmeans(X, K)
 %           iter_ctrs - cluster centers of each iteration, K-by-p-by-iter
 %                       3D matrix.
 
-% YOUR CODE HERE
 [N,P]=size(X);
 ctrs=zeros(K,P);
-
 
 % random pick k-centers
 uni_X=unique(X,'rows');

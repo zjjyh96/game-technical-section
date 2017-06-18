@@ -1,4 +1,3 @@
-
 path='image/Train/CheckCode-';
 post='.jpeg';
 X_train=[];

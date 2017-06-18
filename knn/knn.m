@@ -9,7 +9,6 @@ function y = knn(X, X_train, y_train, K)
 %   OUTPUT: y    : predicted labels, 1-by-N_test row vector.
 %
 
-% YOUR CODE HERE
 N=size(X_train,2);
 N_test=size(X,2);
 dist=zeros(N,1);

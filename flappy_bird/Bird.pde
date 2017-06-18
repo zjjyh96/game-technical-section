@@ -1,11 +1,13 @@
-class Bird {
+class Bird 
+{
   float x, y, vy, vx, g;
   PImage[] bird = new PImage[2];
   int flyState=0;
   int birdHeight=32;
   int birdWidth=45;
 
-  Bird() {
+  Bird() 
+  {
     g=0.5;
     vx=3.25;
     x = window_width/4;
@@ -15,7 +17,8 @@ class Bird {
   } 
   
   // draw the bird
-  void render() {
+  void render() 
+  {
     gravity();
     switch(flyState)
     {
@@ -28,38 +31,49 @@ class Bird {
     }
   }
 
-  void jump() {
+  void jump() 
+  {
     vy = -9;
     flyState=0;
   }
 
-  void gravity() {
+  void gravity() 
+  {
     vy += g;
     if (vy>0)
       flyState=1;
     else flyState=0;
   }
 
-  void move() {
+  void move() 
+  {
     y += vy;
-    for (int i = 0; i < n_pillars; i++) {
+    for (int i = 0; i < n_pillars; i++) 
+    {
       pillar[i].x -= vx;
     }
   }
 
-  boolean isCollision() {
-    if (y > window_height||y < 0) {
+  boolean isCollision() 
+  {
+    if (y > window_height||y < 0) 
+    {
       return true;
     }
     
-    for(int i = 0; i < n_pillars; i++){
-      int pWidth=pillar[i].pillarWidth;
-      int pHeight=pillar[i].pillarHeight;
-      if (isInBox(x,y,birdHeight,birdWidth,pillar[i].x,pillar[i].yup,pHeight,pWidth))
+    for(int i = 0; i < n_pillars; i++)
+    {
+      float pWidth=pillar[i].pillarWidth;
+      float pHeight=pillar[i].pillarHeight;
+      float px=pillar[i].x;
+      float pyup=pillar[i].yup;
+      float pydown=pillar[i].ydown;
+      
+      if (isInBox(x,y,birdHeight,birdWidth,px,pyup,pHeight,pWidth))
       {
         return true;
       }
-      if (isInBox(x,y,birdHeight,birdWidth,pillar[i].x,pillar[i].ydown,pHeight,pWidth))
+      if (isInBox(x,y,birdHeight,birdWidth,px,pydown,pHeight,pWidth))
       {
         return true;
       }
@@ -71,10 +85,14 @@ class Bird {
   {
     float[][] box1=new float[4][2];
     int i;
-    box1[0][0]=x1; box1[0][1]=y1;
-    box1[1][0]=x1+w1; box1[1][1]=y1;
-    box1[2][0]=x1; box1[2][1]=y1+h1;
-    box1[3][0]=x1+w1; box1[3][1]=y1+h1;
+    box1[0][0]=x1; 
+    box1[0][1]=y1;
+    box1[1][0]=x1+w1; 
+    box1[1][1]=y1;
+    box1[2][0]=x1; 
+    box1[2][1]=y1+h1;
+    box1[3][0]=x1+w1; 
+    box1[3][1]=y1+h1;
     
     for (i=0;i<=3;i++)
     {

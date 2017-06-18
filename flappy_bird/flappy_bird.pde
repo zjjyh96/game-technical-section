@@ -13,26 +13,31 @@ int n_pillars = window_width/pillarSpace+1;
 Bird player;
 Pillar[] pillar = new Pillar[n_pillars];
 
-void settings(){
+void settings()
+{
   size(window_width,window_height);
 }
 
-void setup() {
+void setup() 
+{
   player = new Bird();
-  for (int i =0; i < n_pillars; i++) {
+  for (int i =0; i < n_pillars; i++) 
+  {
     pillar[i] = new Pillar(i);
   }
   bg=loadImage("background.png");
   game_status = 0;
 }
 
-void draw() {
+void draw() 
+{
   for (int i=0; i<n_bgs; i++)
   {
     image(bg,i*bgSpace,0);
   }
   
-  switch(game_status) {
+  switch(game_status) 
+  {
   case 0:
     initialScreen();
     break; 
@@ -45,14 +50,16 @@ void draw() {
   }
 }
 
-void initialScreen() {
+void initialScreen()
+{
   textSize(60);
   text("Flappy Bird", width/3, height/2-100);
   textSize(30);
   text("Press any Key to play!", width/3, height/2+100);
 }
 
-void gameEnd() {
+void gameEnd()
+{
   textSize(46);
   fill(#ecf0f1);
   text("Game Over", (window_width/2)-120, (window_height/2)-60);
@@ -61,10 +68,12 @@ void gameEnd() {
   text(score, (window_width/2)+50, (window_height/2));
 }
 
-void gameRun() {
+void gameRun() 
+{
   player.move();
   player.render();
-  for (int i = 0; i < n_pillars; i++) {
+  for (int i = 0; i < n_pillars; i++) 
+  {
     pillar[i].checkLimits();
     pillar[i].render(); 
     pillar[i].setPoints();
@@ -73,7 +82,8 @@ void gameRun() {
   if (player.isCollision()) game_status=2;
 }
 
-void renderScore() {
+void renderScore() 
+{
   strokeWeight(2);
   stroke(#ecf0f1);
   fill(#2c3e50);
@@ -89,14 +99,15 @@ void renderScore() {
   text(score, 65, 85);
 }
 
-void keyPressed() {
+void keyPressed() 
+{
   if (game_status == 0) 
   {
     game_status=1;
   } 
   else if(game_status == 2) 
   {
-    // init the features
+    // init
     score = 0;
     player.y = (window_height/2);
     player.vy = 0;
@@ -115,7 +126,8 @@ void keyPressed() {
   }
 }
 
-void mousePressed(){
+void mousePressed()
+{
   if (game_status == 0) 
   {
     game_status=1;
