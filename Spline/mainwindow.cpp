@@ -32,19 +32,19 @@ mainwindow::mainwindow(QWidget* parent):QWidget(parent)
     tslider->setMinimum(0);
     tslider->setMaximum(100);
     tslider->setValue(100);
-    tslider->setFixedWidth(140);
+    tslider->setFixedWidth(120);
 
     gslider= new QSlider(Qt::Horizontal);
     gslider->setMinimum(1);
     gslider->setMaximum(50);
     gslider->setValue(50);
-    gslider->setFixedWidth(140);
+    gslider->setFixedWidth(120);
 
     sslider= new QSlider(Qt::Horizontal);
     sslider->setMinimum(1);
     sslider->setMaximum(100);
     sslider->setValue(100);
-    sslider->setFixedWidth(140);
+    sslider->setFixedWidth(120);
 
     //初始生成轨迹按钮disable
     startButton->setDisabled(true);

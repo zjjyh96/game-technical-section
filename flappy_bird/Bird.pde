@@ -33,7 +33,7 @@ class Bird
 
   void jump() 
   {
-    vy = -9;
+    vy = -6;
     flyState=0;
   }
 

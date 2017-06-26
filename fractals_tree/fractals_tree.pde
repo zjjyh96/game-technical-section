@@ -5,7 +5,7 @@ void setup()
 {
   size(600, 600);
   Rule[] ruleset = new Rule[1];
-  ruleset[0] = new Rule('F', "FF+[+F-F-F]-[-F+F+F]");
+  ruleset[0] = new Rule('F', "FF+[-F-F+F]-[+F+F+F]");
   //ruleset[0] = new Rule('F', "FF+[+F-F+F]-[-F-F+F]");
   
   lsys = new LSystem("F", ruleset);
